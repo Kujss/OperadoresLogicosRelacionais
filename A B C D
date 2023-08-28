@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<locale.h>
+
+main(){
+	
+	setlocale(LC_ALL, "portuguese");
+	
+	int A = 44, B = 0, C = 2, D = 10;
+	
+	if(A > B && A > C && A > D){
+		printf("A é o maior");
+		
+		if(B < C && B < D){
+			printf("B é o menor");
+		}else if(C < D){
+			printf("C é o menor");
+		}else{
+			printf("D é o menor");
+		}
+		
+	}else if(B > A && B > C && B > D){
+		printf("B é o maior");
+		if(A < C && A < D){
+			printf("A é o menor");
+		}else if(C < D){
+			printf("C é o menor");
+		}else{
+			printf("D é o menor");
+		}
+		
+	}else if(C > A && C > B && C > D){
+		printf("C é o maior");
+		if(A < B && A < D){
+			printf("A é o menor");
+		}else if(C < D){
+			printf("C é o menor");
+		}else{
+			printf("D é o menor");
+		}
+	}
+		
+}
