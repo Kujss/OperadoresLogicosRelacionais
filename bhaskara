@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+int main(){
+	
+	setlocale(LC_ALL, "portuguese");
+	
+	float a, b, c;
+	float x, x1, x2;
+	
+	printf("Coloque o A: ");
+	scanf("%f", &a);
+	
+	printf("Coloque o B: ");
+	scanf("%f", &b);
+	
+	printf("Coloque o C: ");
+	scanf("%f", &c);
+	
+	float delta = sqrt(b) - 4 * a * c;
+	
+	if(a == 0){
+		printf("Não é equação do segundo grau");
+	}
+	else if(delta < 0){
+		printf("Não existe raiz");
+		
+	}
+	else if(delta == 0){
+		x = -b + sqrt(delta) / (2 * a);
+		printf("Tem uma única raiz e é: %f", x);
+	}else{
+		x1 = -b	- sqrt(delta) / (2 * a);
+		x2 = -b + sqrt(delta) / (2 * a);
+		printf("Tem duas raízes e são: %f e %f", x1, x2);
+	}
+	
+}
