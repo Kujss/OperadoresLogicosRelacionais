@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<locale.h>
+
+main (){
+	
+	setlocale(LC_ALL, "portuguese");
+	
+	float n1 = 10, n2 = 7, n3 = 5, mediaPonderada;
+	
+	mediaPonderada = n1 + n2 + (n3 * 2)/4;
+	
+	if(mediaPonderada >= 7){
+		printf("Média: %f. Passou pae!", mediaPonderada);
+	}else{
+		printf("Média: %f. Reprovuaido!", mediaPonderada);
+	}
+	
+}
