@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <locale.h>
+
+ main() {
+
+  setlocale(LC_ALL, "portuguese");
+
+   int valor = 1;
+
+   while (valor < 6){
+
+     int multiplo = valor * 3;
+
+     printf("%d\n", multiplo);
+
+     valor++;
+     
+   }
+   
+     
+}
