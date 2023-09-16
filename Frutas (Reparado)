@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//Utilizei o ChatGPT para entender melhor como fazer esse código
+
+#define MAX_FRUTAS 5
+
+char nomes[MAX_FRUTAS][50] = {
+    "Abacaxi",
+    "Maçã",
+    "pêra"
+};
+
+float precos[MAX_FRUTAS] = {5.00, 1.00, 4.00};
+
+int main() {
+    int opcao;
+    float total = 0.0;
+
+    do {
+        printf("\n=== Menu de Frutas ===\n");
+        printf("Escolha a fruta que deseja comprar:\n");
+
+        for (int i = 0; i < MAX_FRUTAS; i++) {
+            printf("%d. %s - R$%.2f\n", i + 1, nomes[i], precos[i]);
+        }
+
+        printf("0. Sair\n");
+        printf("Opção: ");
+        scanf("%d", &opcao);
+
+        if (opcao >= 1 && opcao <= MAX_FRUTAS) {
+            int quantidade;
+            printf("Quantidade desejada: ");
+            scanf("%d", &quantidade);
+
+            if (quantidade > 0) {
+                float subtotal = precos[opcao - 1] * quantidade;
+                total += subtotal;
+                printf("Adicionado %d %s ao seu carrinho. Subtotal: R$%.2f\n", quantidade, nomes[opcao - 1], subtotal);
+            } else {
+                printf("Quantidade inválida.\n");
+            }
+        } else if (opcao != 0) {
+            printf("Opção inválida.\n");
+        }
+
+    } while (opcao != 0);
+
+    printf("Total da compra: R$%.2f\n", total);
+    printf("Obrigado por comprar conosco!\n");
+
+}
